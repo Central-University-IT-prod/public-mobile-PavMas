@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+<!--    <fragment-->
+<!--        android:id="@+id/mainFragment"-->
+<!--        android:name="com.trifcdr.lifestylehub.presentation.fragments.main.MainFragment"-->
+<!--        android:label="MainFragment" >-->
+<!--        <action-->
+<!--            android:id="@+id/mainToProfile"-->
+<!--            app:destination="@id/profileFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/mainToRecommendations"-->
+<!--            app:destination="@id/recommendationsFragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/profileFragment"-->
+<!--        android:name="com.trifcdr.lifestylehub.presentation.fragments.profile.ProfileFragment"-->
+<!--        android:label="ProfileFragment" >-->
+<!--        <action-->
+<!--            android:id="@+id/profileToMain"-->
+<!--            app:destination="@id/mainFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/profileToRecommendations"-->
+<!--            app:destination="@id/recommendationsFragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/recommendationsFragment"-->
+<!--        android:name="com.trifcdr.lifestylehub.presentation.fragments.leisure.RecommendationsFragment"-->
+<!--        android:label="RecommendationsFragment">-->
+<!--        <action-->
+<!--            android:id="@+id/recommendationsToMain"-->
+<!--            app:destination="@id/mainFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/recommendationsToProfile"-->
+<!--            app:destination="@id/profileFragment" />-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.trifcdr.lifestylehub.presentation.fragments.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_venueFragment"
+            app:destination="@id/venueFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leisureFragment"
+        android:name="com.trifcdr.lifestylehub.presentation.fragments.leisure.LeisureFragment"
+        android:label="fragment_recommendations"
+        tools:layout="@layout/fragment_leisure" >
+        <action
+            android:id="@+id/action_leisureFragment_to_venueFragment"
+            app:destination="@id/venueFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.trifcdr.lifestylehub.presentation.fragments.profile.ProfileFragment"
+        android:label="fragmint_profile"
+        tools:layout="@layout/fragmint_profile" />
+    <fragment
+        android:id="@+id/venueFragment"
+        android:name="com.trifcdr.lifestylehub.presentation.fragments.venue.VenueFragment"
+        android:label="fragment_venue"
+        tools:layout="@layout/fragment_venue" >
+        <action
+            android:id="@+id/action_venueFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="venueId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_venueFragment_to_leisureFragment"
+            app:destination="@id/leisureFragment" />
+
+    </fragment>
+
+</navigation>
